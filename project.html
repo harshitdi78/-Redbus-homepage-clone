@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redbus Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Montserrat:ital,wght@0,400;1,100&family=Nunito:wght@300;500&family=Oswald&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0dcec699b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    color: #4a4a4a;
+    height: 100%;
+    word-break: break-word;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* The Header part */
+header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 12;
+    box-shadow: 0 86px 34px rgba(0,0,0,.01), 0 48px 29px rgba(0,0,0,.03), 0 5px 12px rgba(0,0,0,.05), 0 0 0 rgba(0,0,0,.05);
+}
+
+.vertical-rule {
+    height: 20px;
+    width: 1px;
+    background-color: #aaa;
+    margin: 0 5rem;
+}
+
+.navbar {
+    max-width: 1200px;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    margin: auto;
+    font-size: 15px;
+    color: #1d1d1d;
+    font-weight: 500;
+}
+
+.primary-nav-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.secondary-nav-list {
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.primary-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0.625rem;
+    margin-right: 0.75rem;
+    cursor: pointer;
+}
+
+.secondary-item {
+    position: relative;
+    padding: 0.375rem 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.secondary-item img {
+    margin-right: 0.375rem;
+}
+
+.secondary-item span {
+    margin: 0 4px 0 2px;
+}
+
+.secondary-item img {
+    height: 20px;
+    width: 20px;
+    filter: grayscale(1);
+}
+
+.primary-nav-list li img {
+    height: 1.25rem;
+    width: 5.25rem;
+    margin-bottom: 0.5rem;
+    filter: grayscale(1) brightness(0);
+}
+
+.primary-nav-list li img:hover {
+    filter: none;
+}
+
+/* Search Section */
+.search-wrapper{
+    height: fit-content;
+    width: 100%;
+}
+
+.search-section {
+    top: 100px;
+    width: 100%;
+    height: 32rem;
+    background-image: url(./Assets/HeroImage.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.heading {
+    color: #fff;
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 700;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50px;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 136px;
+}
+
+.search-bar {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 32px;
+}
+
+.from-to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    width: 250px;
+    gap: 10px;
+    border-right: 1px solid rgb(224, 224, 224);
+    ;
+}
+
+.from-to-arrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: #FFF;
+    left: 230px;
+    top: 36px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    width: 180px;
+}
+
+.from-to img {
+    height: 30px;
+    width: 30px;
+}
+
+.search-from-to {
+    display: flex;
+    align-items: center;
+    width: 166px;
+    height: inherit;
+    position: relative;
+}
+
+.search-from-to input {
+    height: 22px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+}
+
+.search-from-to label {
+    position: absolute;
+    top: 45px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    pointer-events: none;
+    color: rgb(29, 29, 29);
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    width: 244px;
+    padding: 40px;
+    background-color: rgb(216, 78, 85);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 0 32px 32px 0;
+}
+
+/* offer section */
+.offer-wrapper {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    bottom: -151px;
+    left: 0;
+    right: 0;
+    height: 18.75rem;
+}
+
+.offer-card {
+    width: 1200px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 32px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 4px 4px 25px;
+}
+
+.offer-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-header h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #4a4a4a;
+}
+
+.offer-header a {
+    border: 1px solid #999;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: rgb(16, 52, 217);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.carousel-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    overflow: scroll hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel-card {
+    display: flex;
+    width: 20.3rem;
+    color: #FFF;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    background-image: linear-gradient(71.04deg, rgb(12, 57, 139) -6.92%, rgb(62, 118, 216) 109.43%);
+}
+
+.carousel-card2 {
+    background-image: linear-gradient(71.04deg, rgb(139, 12, 12) -6.92%, rgb(216, 62, 62) 109.43%);
+}
+
+.carousel-card3 {
+    background-image: linear-gradient(71.04deg, rgb(12, 139, 31) -6.92%, rgb(62, 216, 95) 109.43%);
+}
+
+.carousel-card4 {
+    background-image: linear-gradient(71.04deg, rgb(139, 131, 12) -6.92%, rgb(183, 216, 62) 109.43%);
+}
+
+.carousel-card5 {
+    background-image: linear-gradient(71.04deg, rgb(139, 12, 111) -6.92%, rgb(213, 62, 216) 109.43%);
+}
+
+.offer-logo {
+    width: 4.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.offer-logo img {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 2.5rem;
+}
+
+.offer-descrption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 180px;
+}
+
+.bus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    width: fit-content;
+    font-size: 12px;
+    text-align: center;
+}
+
+.offer-discount {
+    font-size: 1rem;
+    font-weight: 700;
+    max-height: 3rem;
+    overflow: hidden;
+    line-height: 1.5rem;
+}
+
+.offer-validity {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+.offer-footer {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.offer-code {
+    border: 1px dashed #FFF;
+    background-color: rgba(255, 255, 255, 0.2);
+    ;
+    border-radius: 0.25rem;
+    max-width: 140px;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Advertisement */
+.ad-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.ad-insta{
+    height: 90px;
+    width: 970px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ad-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px
+}
+.gap{
+    width: 100%;
+    height: 300px;
+    background-color: transparent;
+}
+
+/* About us section */
+.aboutUsWrapper {
+    display: flex;
+    justify-content: center;
+}  
+
+.aboutUsBox {
+    margin-top: 150px;
+    display: flex;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.left h1 {
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+    font-weight: 400;
+    color: rgb(29, 29, 29);
+    width: 34.5rem;
+}
+
+.left b {
+    font-weight: 700;
+}
+
+.booking-list {
+    max-width: 480px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    border-bottom: 1px solid #aaa;
+}
+
+.booking-list-item {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vertical-rule2 {
+    height: 20px;
+    width: 1px;
+    background-color: #aaa;
+    margin: 0 3rem;
+}
+
+.booking-list-item-active {
+    color: rgb(216, 78, 85);
+    font-weight: 700;
+}
+
+#train-logo{
+    filter: grayscale(1) brightness(0);
+}
+
+#train-logo:hover{
+    filter: none;
+}
+
+.rentalsType{
+    display: flex;
+    align-items: center;
+}
+
+.rentalsType p {
+    font-weight: 800;
+    line-height: 17px;
+}
+
+.bookingButton {
+    width: fit-content;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: rgb(216, 78, 85);
+    border: none;
+    border-radius: 1rem;
+    padding: 14px 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+}
+.right {
+    width: 35.25rem;
+    background-image: url(https://s3.rdbuz.com/web/images/homeV2/AboutUs/aboutUsImg.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+
+.right img{
+    position: absolute;
+    width: 670px;
+    height: 401px;
+    top: 148px;
+    left: -121px;
+}
+
+.partial-container-wrapper{
+    margin-top: 5.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partial-container{
+    width: 1200px;
+    background-image: url(https://s1.rdbuz.com/web/images/homeV2/appinstall/appInstallbg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 2rem;
+    /* display: flex; */
+}
+.partial-container h1{
+    color: #FFF;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
+
+.app-installation-wrapper {
+    display: flex;
+    gap: 4rem;
+}
+
+.app-installation-left{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    justify-content: space-around;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    width: 23.5rem;
+} 
+
+.app-installation-left-upper-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.25rem;
+}
+
+.app-installation-left-upper-section-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-installation-left-upper-section p{
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.app-installation-left-lower-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-installation-left-lower-sub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+ 
+.app-installation-left-lower-sub-section p{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.app-installation-left-lower-sub-section label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.downloads {
+    font-size: 14px;
+    line-height: 17px;
+    color: #4a4a4a;
+}
+
+.app-installation-left-lower-sub-section div {
+    color: rgb(29, 29, 29);
+    font-weight: 600;
+    line-height: 17px;
+}
+
+.vertical-rule3{
+    width: 2px;
+    background-color: rgb(193, 193, 193);
+}
+
+.app-installation-right {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 5rem;
+}
+
+.app-installation-right-sub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.app-installation-right p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.primo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 7rem;
+}
+
+.primo-card-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.primo-cards {
+    background-image: linear-gradient(to right, rgb(38, 72, 153), rgb(125, 70, 134));
+    height: 9.8rem;
+    width: 22rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.primo-cards h2 {
+    color: #fff;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.primo-cards p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.partnership-container {
+    margin: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.rtcs-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rtcs-container h1{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.rtcs-header {
+    display: flex;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+.rtcs-header h2{
+    font-size: 1.75rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+}
+
+.rtcs-button{
+    border: 1px solid rgb(170, 170, 170);
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.rtcs-button:hover {
+    box-shadow: rgb(0, 0, 0, 0.8) 2px 2px 12px;
+}
+
+.rtcs-partners {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.rtcs-partners a{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgb(29, 29, 29);
+    align-items: center;
+    text-decoration: none;
+}
+
+.rtcs-partners img{
+    height: 6rem;
+    width: 6rem;
+    margin: 0 1rem;
+}
+
+.rtcs-partners p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0.6rem 2rem;
+}
+
+.private-partner-container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    gap: 0.5rem 1.75rem;
+    align-self: stretch;
+}
+
+.private-partner {
+ width: 10.5rem;
+}
+
+.private-partner a {
+    text-decoration: none;
+    color: #1d1d1d;
+    display: inline-block;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    text-overflow: ellipsis;
+    max-width: 10rem;
+    overflow: hidden;
+    border-radius: 4.25rem;
+    flex-basis: calc(15% - 24px);
+    white-space: nowrap;
+}
+
+.private-partner a:hover {
+    background-color: rgb(190, 205, 223);
+}
+
+/* FAQs */
+.faq-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10rem;
+}
+
+.faq-container h1 {
+    font-size: 40px;
+    line-height: 28px;
+    margin-bottom: 2.5rem;
+    color: rgb(29, 29, 29);
+}
+
+
+.faq-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    /* overflow: scroll hidden; */
+    white-space: nowrap;
+}
+
+.faq-category {
+    cursor: pointer;
+}
+
+.faq-category p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0.75rem 0.5rem;
+}
+
+.faq-active p {
+    color: rgb(216, 78, 85);
+}
+
+
+/* when we use js to add behaviour */
+/* .faq-hover-line {
+    border-bottom: 3px solid rgb(216, 78, 85);
+    border-radius: 3px 3px 0 0;
+    display: none;
+} */
+
+.faq-hover-line-active {
+    border-bottom: 3px solid rgb(216, 78, 85);
+    border-radius: 3px 3px 0 0;
+}
+
+.faq-question-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.question {
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 1rem;
+    padding: 1.75rem 1.5rem;
+    line-height: 20px;
+    color: rgb(29, 29, 29);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question p{
+    font-weight: 700;
+}
+
+.question i {
+    font-size: 18px;
+}
+
+/* Global Presence Section */
+.global-presence-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10rem;
+    gap: 2rem;
+}
+
+.global-presence-container h1 {
+    font-size: 40px;
+    line-height: 28px;
+    margin-bottom: 0.5rem;
+    color: rgb(29, 29, 29);
+}
+
+.global-presence-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.global-presence-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.global-presence-item p {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 23px;
+    color: rgb(29, 29, 29);
+}
+
+/* Scroll to top button */
+.scroll-to-top-wrapper {
+    display: flex;
+    justify-content: end;
+    margin: 5rem;
+}
+
+.scroll-to-top-button {
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 16px;
+    padding: 1.5rem 0.5rem 0.75rem;
+    width: 40px;
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-to-top-button img {
+    animation: mover 1s infinite alternate;
+}
+
+@keyframes mover {
+    0%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+/* Footer section */
+#rb-footer-section {
+    background-color: #f7f7f7;
+}
+
+.rb-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 7.5rem 2rem;
+    gap: 2rem;
+    margin: 0 5rem;
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer-content li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-content li h2 {
+    font-size: 1.125rem;
+    color: #1d1d1d;
+    margin: 0;
+}
+
+.footer-content li a {
+    text-decoration: none;
+    color: #3e3e52;
+}
+
+.footer-content li img{
+    height: 4.1rem;
+    width: 6.25rem;
+}
+
+.footer-content li span {
+    width: 250px;
+}
+
+.horizontal-rule {
+    width: 100%;
+    background-color: #e5e5e5;
+    height: 1px;
+}
+
+.copyrights-social-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+}
+    </style>
+</head>
+
+<body>  
+    <header>
+    <div class="navbar">
+        <img src="https://st.redbus.in/Images/rdc/rdc-redbus-logo.svg" alt="Redbus logo" height="48px"
+            width="80px">
+        <span class="vertical-rule"></span>
+        <ul class="primary-nav-list">
+            <li class="primary-item"><img src="https://st.redbus.in/web/images/layout/rb_vertical.svg"
+                    alt="Bus Tickets"><span>Bus Tickets</span></li>
+            <li class="primary-item"><img src="https://st.redbus.in/web/images/layout/ryde_vertical.svg"
+                    alt="Cab Rental"><span>Cab Rental</span></li>
+            <li class="primary-item"><img src="https://st.redbus.in/web/images/layout/rail_vertical.svg"
+                    alt="Train Tickets"><span>Train Tickets</span></li>
+        </ul>
+        <ul class="secondary-nav-list">
+            <li class="secondary-item"><img src="./Assets/headset.png" alt=""><span> Help</span></li>
+            <li class="secondary-item"><i class="fa-regular fa-circle-user fa-xl"></i><span> Account</span><img
+                    src="./Assets/expand_more_icon.png" alt="Expand more icon"></li>
+        </ul>
+    </div>
+</header>
+<section class="search-section">
+    <h1 class="heading">India's No. 1 Online Bus Ticket Booking Site</h1>
+    <div class="search-box">
+        <div class="search-bar">
+            <div class="from-to">
+                <img src="./Assets/board.jpg" alt="">
+                <div class="search-from-to">
+                    <input type="text" id="src" name="src" class="src">
+                    <label for="src">From</label>
+                </div>
+            </div>
+            <div class="from-to-arrow">
+                <i class="fa-solid fa-arrow-right-arrow-left fa-lg"></i>
+            </div>
+            <div class="from-to">
+                <img src="./Assets/depart.jpg" alt="">
+                <div class="search-from-to">
+                    <input type="text" id="to" name="to" class="to">
+                    <label for="to">To</label>
+                </div>
+            </div>
+            <div class="from-to date">
+                <img src="./Assets/calendar.jpg" alt="">
+                <div class="search-from-to">
+                    <!-- <input type="date" id="date" name="date" class="date"> -->
+                    <label for="date">Date</label>
+                </div>
+            </div>
+            <button class="button">SEARCH BUSES</button>
+        </div>
+    </div>
+
+    <!-- For Offer -->
+    <div class="offer-wrapper">
+        <div class="offer-card">
+            <div class="offer-header">
+                <h2>TRENDING OFFERS</h2>
+                <a href="#">View All</a>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-card carousel-card1">
+                    <div class="offer-logo">
+                        <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                            alt="">
+                    </div>
+                    <div class="offer-descrption">
+                        <div class="bus">Bus</div>
+                        <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                        <div class="offer-validity">Valid till 30 Nov</div>
+                        <div class="offer-footer">
+                            <div class="offer-code">FIRST</div>
+                            <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                    alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-card carousel-card2">
+                    <div class="offer-logo">
+                        <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                            alt="">
+                    </div>
+                    <div class="offer-descrption">
+                        <div class="bus">Bus</div>
+                        <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                        <div class="offer-validity">Valid till 30 Nov</div>
+                        <div class="offer-footer">
+                            <div class="offer-code">FIRST</div>
+                            <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                    alt=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-card carousel-card3">
+                    <div class="offer-logo">
+                        <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                            alt="">
+                    </div>
+                    <div class="offer-descrption">
+                        <div class="bus">Bus</div>
+                        <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                        <div class="offer-validity">Valid till 30 Nov</div>
+                        <div class="offer-footer">
+                            <div class="offer-code">FIRST</div>
+                            <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                    alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-card carousel-card4">
+                    <div class="offer-logo">
+                        <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                            alt="">
+                    </div>
+                    <div class="offer-descrption">
+                        <div class="bus">Bus</div>
+                        <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                        <div class="offer-validity">Valid till 30 Nov</div>
+                        <div class="offer-footer">
+                            <div class="offer-code">FIRST</div>
+                            <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-card carousel-card5">
+                <div class="offer-logo">
+                    <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                        alt="">
+                </div>
+                <div class="offer-descrption">
+                    <div class="bus">Bus</div>
+                    <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                    <div class="offer-validity">Valid till 30 Nov</div>
+                    <div class="offer-footer">
+                        <div class="offer-code">FIRST</div>
+                        <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card carousel-card6">
+                <div class="offer-logo">
+                    <img src="https://st.redbus.in/images/FIRST/first_26th_sep_2022_ravi/tile-80X80.png"
+                        alt="">
+                </div>
+                <div class="offer-descrption">
+                    <div class="bus">Bus</div>
+                    <div class="offer-discount">Save up to Rs 250 on bus tickets</div>
+                    <div class="offer-validity">Valid till 30 Nov</div>
+                    <div class="offer-footer">
+                        <div class="offer-code">FIRST</div>
+                        <div class="code-copy"><img src="https://s2.rdbuz.com/web/images/homeV2/copy.svg"
+                                alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<div class="gap"></div>
+<div class="ad-wrapper">
+<div class="ad-insta">
+    <img src="https://platforms.makemytrip.com/contents/eb882edd-8d39-4cf1-8d57-a04f6e64f7c1" alt="">
+</div>
+</div>
+ <!-- About Us Section -->
+ <div class="aboutUsWrapper">
+    <div class="aboutUsBox">
+        <section class="left">
+            <h1>NOW, <b>GET MORE THAN<br>JUST BUS</b> TICKETS WITH<br>REDBUS!</h1>
+            <ul class="booking-list">
+                <li class="booking-list-item booking-list-item-active"><img src="https://s2.rdbuz.com/web/images/homeV2/AboutUs/ryde.svg" alt=""><span>Cab/Bus Rental</span></li>
+                <span class="vertical-rule2"></span>
+                <li class="booking-list-item"><img id="train-logo" src="https://s1.rdbuz.com/web/images/homeV2/AboutUs/redRail.svg" alt=""><span>Train Tickets</span></li>
+            </ul>
+            <p>Rent Cabs, Tempo Travellers & Buses with best drivers</p>
+            <div class="rentalsType">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/AboutUs/ryde_car.svg" alt="">
+                <p>Outstation</p>
+            </div>
+            <div class="rentalsType">
+                <img src="https://s1.rdbuz.com/web/images/homeV2/AboutUs/ryde_car_hourly.svg" alt="">
+                <p>Hourly Rental</p>
+            </div>
+            <div class="rentalsType">
+                <img src="https://s2.rdbuz.com/web/images/homeV2/AboutUs/ryde_airport_transport.svg" alt="">
+                <p>Airport Transfers</p>
+            </div>
+            <button class="bookingButton">Book Cab / Bus Rental <i class="fa-solid fa-arrow-right"></i></button>
+        </section>
+        <section class="right">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/AboutUs/rydePop.svg" alt="">
+        </section>
+    </div>
+</div>
+<div class="partial-container-wrapper">
+    <div class="partial-container">
+        <h1>ENJOY THE APP!</h1>
+        <div class="app-installation-wrapper">
+            <div class="app-installation-left">
+                <div class="app-installation-left-upper-section">
+                    <div class="app-installation-left-upper-section-item">
+                        <img src="https://s3.rdbuz.com/web/images/homeV2/appinstall/tick.svg" alt="">
+                        <p>Quick access</p>
+                    </div>
+                    <div class="app-installation-left-upper-section-item">
+                        <img src="https://s3.rdbuz.com/web/images/homeV2/appinstall/tick.svg" alt="">
+                        <p>Superior live tracking</p>
+                    </div>
+                </div>
+                <div class="app-installation-left-lower-section">
+                    <div class="app-installation-left-lower-sub-section">
+                        <p>
+                            <label>4.5</label><i class="fa-solid fa-star"></i>
+                        </p>
+                        <p class="downloads">50M+ downloads</p>
+                        <div>Play Store</div>
+                    </div>
+                    <div class="vertical-rule3"></div>
+                    <div class="app-installation-left-lower-sub-section">
+                        <p>
+                            <label>4.6</label><i class="fa-solid fa-star"></i>
+                        </p>
+                        <p class="downloads">50M+ downloads</p>
+                        <div>Apple Store</div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-installation-right">
+                <div class="app-installation-right-sub-section">
+                    <p>Scan to <br> download</p>
+                    <img src="https://s1.rdbuz.com/web/images/homeV2/qrCode.svg" alt="">
+                </div>
+                <div class="app-installation-right-sub-section">
+                    <p>Download the <br> App on</p>
+                    <img src="./Assets/playStore.svg" alt="">
+                    <img src="https://s3.rdbuz.com/web/images/homeV2/appinstall/appStore.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Primo section -->
+<div class="primo-container">
+    <div class="primo-image-container">
+        <img src="https://s1.rdbuz.com/web/images/homeV2/primoSection/primoTopBanner.svg" alt="">
+    </div>
+    <div class="primo-card-wrapper">
+        <div class="primo-cards">
+            <div class="primo-card-image">
+                <img src="https://s2.rdbuz.com/web/images/homeV2/primoSection/primoSubImg1.svg" alt="">
+            </div>
+            <div class="primo-card-description">
+                <h2>1 of 5 buses<br>qualify</h2>
+                <p>Primo's strict safety<br>qualification ensures a <br>safer travel for you</p>
+            </div>
+        </div>
+        <div class="primo-cards">
+            <div class="primo-card-image">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/primoSection/primoSubImg2.svg" alt="">
+            </div>
+            <div class="primo-card-description">
+                <h2>Preferred by<br>90%</h2>
+                <p>90% of travellers re-book<br>Primo buses for its<br>puncatuality and comfort</p>
+            </div>
+        </div>
+
+        <div class="primo-cards">
+            <div class="primo-card-image">
+                <img src="https://s2.rdbuz.com/web/images/homeV2/primoSection/primoSubImg3.svg" alt="">
+            </div>
+            <div class="primo-card-description">
+                <h2>9 Lac+ monthly<br>travellers</h2>
+                <p>In 2022, 9Lac+ people<br>traveled with Primo every<br>month</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Partnership-section -->
+<div class="partnership-container">
+     <!-- RTCs section -->
+     <div class="rtcs-container">
+        <h1>PARTNERED WITH</h1>
+        <div class="rtcs-header">
+            <h2>25 RTCs</h2>
+            <a href="#" class="rtcs-button">View All</a>
+        </div>
+        <div class="rtcs-partners">
+            <a href="#">
+                <img src="https://st.redbus.in/buslogos/country/ind/logo_group/10283.png" alt="">
+                <p>APSRTC</p>
+            </a>
+            <a href="#">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/rtc/GSRTC.svg" alt="">
+                <p>GSRTC</p>
+            </a>
+            <a href="#">
+                <img src="https://st.redbus.in/Images/carousel/TSRTC.png" alt="">
+                <p>TSRTC</p>
+            </a>
+            <a href="#">
+                <img src="https://st.redbus.in/buslogos/country/ind/logo_group/10823.png" alt="">
+                <p>MSRTC</p>
+            </a>
+            <a href="#">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/rtc/KERALA-RTC.svg" alt="">
+                <p>Kerala RTC</p>
+            </a>
+            <a href="#">
+                <img src="https://st.redbus.in/buslogos/country/ind/logo_group/16426.png" alt="">
+                <p>SBSTC</p>
+            </a>
+            <a href="#">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/rtc/RSRTC.svg" alt="">
+                <p>RSRTC</p>
+            </a>
+            <a href="#">
+                <img src="https://s3.rdbuz.com/web/images/homeV2/rtc/UPSRTC.svg" alt="">
+                <p>UPSRTC</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Partnership section -->
+    <div class="rtcs-container">
+        <div class="rtcs-header">
+            <h2>3500+ Private Bus Operators</h2>
+            <a href="#" class="rtcs-button">View All</a>
+        </div>
+
+        <div class="private-partner-container">
+            <div class="private-partner">
+                <a href="#">SRS Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Evacay Bus</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Kallada Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">KPN Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Orange Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Parveen Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Rajdhani Express</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">VRL Travels</a>
+            </div>
+            <div class="private-partner">
+                <a href="#">Chatered Speed Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Bengal Tiger</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">SRM Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Infant Jesus</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Patel Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">JBT Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Shatabdi Travels</a>
+            </div>
+            <div class="private-partner">
+                <a href="#">Eagle Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Kanker Roadways</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Komitla</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Sri Krishna Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Humsafar Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Mahasagar Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Raj Express</a>
+            </div>
+            
+            <div class="private-partner">
+                <a href="#">Sharma Travels</a>
+            </div>
+
+            <div class="private-partner">
+                <a href="#">Shrinath Travels</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-container">
+    <h1>FREAQUENTLY ASKED QUESTIONS</h1>
+    <div>
+        <div class="faq-header">
+            <div class="faq-category faq-active">
+                <p>General</p>
+                <div class="faq-hover-line faq-hover-line-active"></div>
+            </div>
+
+            <div class="faq-category">
+                <p>Ticket-related</p>
+                <div class="faq-hover-line"></div>
+            </div>
+
+            <div class="faq-category">
+                <p>Payment</p>
+                <div class="faq-hover-line"></div>
+            </div>
+
+            <div class="faq-category">
+                <p>Cancellation & Refund</p>
+                <div class="faq-hover-line"></div>
+            </div>
+
+            <div class="faq-category">
+                <p>Insurance</p>
+                <div class="faq-hover-line"></div>
+            </div>
+        </div>
+
+        <div class="faq-question-answers">
+            <div class="question">
+                <p>Can I track the location of my booked bus online?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            
+            <div class="question">
+                <p>What are the advantages of purchasing a bus ticket with redBus?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="question">
+                <p>Why book bus tickets online on redBus?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="question">
+                <p>Do I need to create an account on the redBus site to book my bus ticket?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="question">
+                <p>Does bus booking online cost me more?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="question">
+                <p>How can I get the discounts on the bus booking?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="question">
+                <p>What's New in Bus Booking on redBus?</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Global Presence section -->
+<div class="global-presence-container">
+    <h1>GLOBAL PRESENCE</h1>
+    <div class="global-presence-wrapper">
+        <div class="global-presence-item">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/Colombia.svg" alt="Colombia flag">
+                <p>Colombia</p>
+            </img>
+        </div>
+        <div class="global-presence-item">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/India.svg" alt="Bharat Flag">
+                <p>Bharat</p>
+            </img>
+        </div>
+        <div class="global-presence-item">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/Indonesia.svg" alt="Indonesia flag">
+                <p>Indonesia</p>
+            </img>
+        </div>
+        <div class="global-presence-item">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/Malaysia.svg" alt="Malaysia flag">
+                <p>Malaysia</p>
+            </img>
+        </div>
+        <div class="global-presence-item">
+            <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/Peru.svg" alt="Peru flag">
+            <p>Peru</p>
+        </img>
+    </div>
+    <div class="global-presence-item">
+        <img src="https://s3.rdbuz.com/web/images/homeV2/LATAM/GlobalPresence/Singapore.svg" alt="Singapore flag">
+            <p>Singapore</p>
+        </img>
+    </div>
+</div>
+</div>
+
+
+<!-- Scroll to top button -->
+<div class="scroll-to-top-wrapper">
+<div class="scroll-to-top-button">
+    <img src="https://s3.rdbuz.com/web/images/homeV2/scrollArrow.svg" alt="Scroll to top arrow">
+</div>
+</div>
+
+<!-- Footer section -->
+<footer id="rb-footer-section">
+<div class="rb-footer">
+    <ul class="footer-content">
+        <li>
+            <h2>Top RTCs</h2>
+                    <a href="#">APSRTC</a>
+                    <a href="#">GSRTC</a>
+                    <a href="#">MSRTC</a>
+                    <a href="#">TNSTC</a>
+                    <a href="#">View All</a>
+                </li>
+                
+                <li>
+                    <h2>Other</h2>
+                    <a href="#">TSSRTC</a>
+                    <a href="#">SBRTC</a>
+                    <a href="#">RSRTC</a>
+                    <a href="#">Kerala RTC</a>
+                    <a href="#">View All</a>
+                </li>
+
+                <li>
+                    <h2>Top bus routes</h2>
+                    <a href="#">Hyderabad to Banglore Bus</a>
+                    <a href="#">Banglore to Chennai Bus</a>
+                    <a href="#">Pune to Banglore Bus</a>
+                    <a href="#">Mumbai to Banglore Bus</a>
+                    <a href="#">View All</a>
+                </li>
+
+                <li>
+
+                    <h2>Top cities</h2>
+                    <a href="#">Hyderabad Bus Tickets</a>
+                    <a href="#">Banglore Bus Tickets</a>
+                    <a href="#">Chennai Bus Tickets</a>
+                    <a href="#">Pune Bus Tickets</a>
+                    <a href="#">View All</a>
+                </li>
+
+                <li>
+                    <h2>redRail</h2>
+                    <a href="#">Book Train Tickets</a>
+                    <a href="#">PNR Status</a>
+                    <a href="#">Live Train Status</a>
+                    <a href="#">Train Seat Availability</a>
+                    <a href="#">Trains between Stations</a>
+                </li>
+            </ul>
+            <div class="horizontal-rule"></div>
+            <ul class="footer-content">
+                <li>
+                    <img src="https://st.redbus.in/Images/rdc/rdc-redbus-logo.svg" alt="">
+                    <span>redBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. redBus offers bus ticket booking through its website, iOS and Android mobile apps for all major routes.</span>
+                </li>
+
+                <li>
+                    <h2>About redBus</h2> 
+                    <a href="#">About us</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Mobile version</a>
+                    <a href="#">redBus on mobile</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Values</a>
+                 </li>
+ 
+                 <li>
+                     <h2>Info</h2>
+                     <a href="#">T&C</a>
+                     <a href="#">Privacy policy</a>
+                     <a href="#">FAQ</a>
+                     <a href="#">Blog</a>
+                     <a href="#">Bus Operator registration</a>
+                     <a href="#">Agent registration</a>
+                     <a href="#">Insurance partner</a>
+                     <a href="#">User agreement</a>
+                 </li>
+ 
+                 <li>
+                    <h2>Global Sites</h2>
+                    <a href="#">India</a>
+                    <a href="#">Singapore</a>
+                    <a href="#">Malaysia</a>
+                    <a href="#">Indonesia</a>
+                    <a href="#">Peru</a>
+                    <a href="#">Colombia</a>
+                </li>
+
+                <li>
+                    <h2>Our Partners</h2>
+                    <a href="#">Goibibo Bus</a>
+                    <a href="#">Goibibo Hotels</a>
+                    <a href="#">Makemytrip Bus</a>
+                    <a href="#">Makemytrip Hotels</a>
+                </li>
+            </ul>
+            <div class="horizontal-rule"></div>
+            <div class="copyrights-social-media">
+                <div class="copyrights"><code>&copy;</code> 2023 Redbus India Pvt Ltd. All rights reserved</div>
+                <div class="social-media">
+                    <img src="https://st.redbus.in/web/images/layout/social_facebook_new.svg" alt="facebook">
+                    <img src="https://st.redbus.in/web/images/layout/social_linkedin_new.svg" alt="Linkedin">
+                    <img src="https://st.redbus.in/web/images/layout/social_twitter_new.svg" alt="X">
+                    <img src="https://st.redbus.in/web/images/layout/social_instagram_new.svg" alt="Instagram">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
